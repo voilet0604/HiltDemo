@@ -1,8 +1,12 @@
 package com.violet.model
 
+import com.violet.model.entity.User
+
 interface IUserRepository {
 
-    suspend fun login(name: String, pwd: String): UserModel
+    suspend fun login(name: String, pwd: String): User
 
-    suspend fun saveUser(user: UserModel): Boolean
+    suspend fun saveUser(vararg user: User): Boolean
+
+    suspend fun getUserList(): List<User>
 }

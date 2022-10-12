@@ -1,5 +1,8 @@
-package com.violet.domain
+package com.violet.domain.di
 
+import com.violet.domain.LocalUserDataSourceImpl
+import com.violet.domain.RemoteUserDataSourceImpl
+import com.violet.domain.UserRepositoryImpl
 import com.violet.model.ILocalUserDataSource
 import com.violet.model.IRemoteUserDataSource
 import com.violet.model.IUserRepository
@@ -25,4 +28,5 @@ abstract class DomainModule {
     @Binds
     @Singleton
     abstract fun bindRemoteUserDataSource(remoteUserDataSourceImpl: RemoteUserDataSourceImpl): IRemoteUserDataSource
+
 }
